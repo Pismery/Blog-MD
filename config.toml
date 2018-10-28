@@ -1,12 +1,21 @@
 baseurl = "https://Pismery.github.io"
 title = "Pismery Blog"
+
 theme = "hugo-theme-cleanwhite"
+#theme = "timer-hugo"
+#theme = "hugo-pacman-theme"
+#theme = "hugo-theme-air"
+#theme = "hugo-nuo"
+#theme = "jeffprod"
+#theme = "sam"
+#theme = "coder-portfolio"
+
 languageCode = "utf-8"
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 googleAnalytics = ""
 preserveTaxonomyNames = true
-paginate = 5 #frontpage pagination
+paginate = 10 #frontpage pagination
 hasCJKLanguage = true
 
 [outputs]
@@ -34,7 +43,7 @@ home = ["HTML", "RSS", "Algolia"]
   algolia_apiKey = ""
 
   # Sidebar settings
-  sidebar_about_description = "Software Developer, Open Source Enthusiast and Life Adventurer"
+  sidebar_about_description = "Software Developer"
   sidebar_avatar = "img/head.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
   featured_tags = true 
@@ -48,38 +57,38 @@ home = ["HTML", "RSS", "Algolia"]
   disqus_site = ""
 
   #wechat pay & alipay 
-  reward = false
+  reward = true
   reward_guide = "如果这篇文章对你有用，请随意打赏" 
 
   [params.social]
-  rss            = true 
-  email          = "youemail@gmail.com"
+  #rss            = true 
+  email          = "pismery@163.com"
   #facebook      = "full profile url in facebook"
   #googleplus    = "full profile url in googleplus"
   #twitter       = "full profile url in twitter"
-  linkedin       = "full profile url in linkedin"
-  stackoverflow  = "full profile url in stackoverflow"
+  #linkedin       = "full profile url in linkedin"
+  #stackoverflow  = "full profile url in stackoverflow"
   #instagram     = "full profile url in instagram"
   github         = "https://github.com/Pismery"
   wechat         = "wechat-code.jpg"
   #pinterest     = "full profile url in pinterest"
   
   [[params.friend_link]]
-  title = "Linda的博客"
-  href =  "https://zhaozhihan.com"
+  #title = "Linda的博客"
+  #href =  "https://zhaozhihan.com"
 
-  [[params.bookmark_link]]
-  title =  "Martin Fowler"
-  href =  "https://martinfowler.com"
-  [[params.bookmark_link]]
-  title = "ServiceMesh中文网"
-  href =  "http://www.servicemesh.cn"
-  [[params.bookmark_link]]
-  title = "Awesome Service Mesh"
-  href = "https://servicemesh.gitbooks.io/awesome-servicemesh"
-  [[params.bookmark_link]]
-  title =  "Image Compression"
-  href = "https://tinypng.com"
+  #[[params.bookmark_link]]
+  #title =  "Martin Fowler"
+  #href =  "https://martinfowler.com"
+  #[[params.bookmark_link]]
+  #title = "ServiceMesh中文网"
+  #href =  "http://www.servicemesh.cn"
+  #[[params.bookmark_link]]
+  #title = "Awesome Service Mesh"
+  #href = "https://servicemesh.gitbooks.io/awesome-servicemesh"
+  #[[params.bookmark_link]]
+  #title =  "Image Compression"
+  #href = "https://tinypng.com"
   
 [outputFormats.Algolia]
 baseName = "algolia"

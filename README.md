@@ -1,2 +1,2 @@
 # Blog-MD
-This is Pismery blog md
+This is Pismery blog markdown sources

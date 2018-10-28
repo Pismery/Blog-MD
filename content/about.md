@@ -3,6 +3,8 @@ title: About Hugo
 date: 2014-04-09
 authorbox: false
 sidebar: false
+categories:
+    - about
 menu: main
 ---
 

@@ -1,19 +1,17 @@
 ---
-title: Basic HTML Elements2
-description: Example test article that contains basic HTML elements for text formatting on the Web.
-date: 2018-04-16
-toc: true
-categories:
-  - "Test"
-tags:
-  - "Another test2"
-  - "go"
+title: "模板"
+discriptions: "Template"
+date: 2018-10-28T21:06:01+08:00
+archives: "2018"
+tags: [Java,Golang]
+categories: [Java,Golang]
+author: Pismery Liu
+toc: false
 ---
 
-The main purpose of this article is to make sure that all basic HTML Elements are decorated with CSS so as to not miss any possible elements when creating new themes for Hugo.
+Article introduction
 <!--more-->
 
-## Headings
 
 Let's start with all possible headings. The HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level and `<h6>` is the lowest.
 
@@ -164,3 +162,5 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd>X</kbd> to win. Or press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>F</kbd></kbd> to show FPS counter.
 
 <mark>As a unit of information in information theory, the bit has alternatively been called a shannon</mark>, named after Claude Shannon, the founder of field of information theory.
+
+
