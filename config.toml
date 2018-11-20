@@ -23,7 +23,7 @@ home = ["HTML", "RSS", "Algolia"]
 
 [params]
   header_image = "img/home-bg2.jpg"
-  SEOTitle = "刘嘉禾的博客 | Pismery Liu Blog"
+  SEOTitle = "博客 | Pismery Liu Blog"
   description = "程序员"
   keyword = "Pismery Johonr 博客"
   slogan = "路在脚下，心向远方"

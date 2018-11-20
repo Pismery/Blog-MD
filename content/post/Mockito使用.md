@@ -5,7 +5,7 @@ date: 2018-11-14T20:05:35+08:00
 author: Pismery Liu
 archives: "2018"
 tags: [测试]
-categories: []
+categories: [Java]
 toc: false
 ---
 <!--more-->
@@ -69,42 +69,6 @@ when(spy.get(0)).thenReturn("foo");
 //You have to use doReturn() for stubbing
 doReturn("foo").when(spy).get(0);
 ```
-
-## ArgumentCaptor
-
-> 介绍: 
-    
-用于捕获传入方法的参数
-
-> 使用场景:
-
-在某些场景中，不光要对方法的返回值和调用进行验证，同时需要验证一系列交互后所传入方法的参数。那么我们可以用参数捕获器来捕获传入方法的参数进行验证，看它是否符合我们的要求。
-    
-```
-//例1
-//当多次调用时，argument.getValue()返回最后一次调用的参数
-ArgumentCaptor<PhonePo> argument = ArgumentCaptor.forClass(PhonePo.class);
-
-verify(mockedPhonePoRepository, times(2)).saveAndFlush(argument.capture());
-assertThat(argument.getValue().getPhoneNo()).isEqualTo("456");
-
-
-//例2
-//当多次调用时使用argument.getAllValues()获取所有参数
-ArgumentCaptor<PhonePo> argument = ArgumentCaptor.forClass(PhonePo.class);
-
-verify(mockedPhonePoRepository, times(2)).saveAndFlush(argument.capture());
-List<PhonePo> argumentList = argument.getAllValues();
-assertThat(argumentList.get(0).getPhoneNo()).isEqualTo("123");
-assertThat(argumentList.get(1).getPhoneNo()).isEqualTo("456");
-
-verify(mockedPhonePoRepository, times(2)).saveAndFlush(any());
-
-```
-> 注意事项
-
-    1. 要先capture()在getValue();
-    2. 当多次调用时，argument.getValue()返回最后一次调用的参数
 ## @InjectMock
 > 注入方式: 优先级：1>2>3
 
@@ -227,47 +191,45 @@ public class ArticleManager {
 }
 ```
 
-### ArgumentCaptor + doAnswer + vertify使用实例
+
+## ArgumentCaptor
+
+> 介绍: 
+    
+用于捕获传入方法的参数
+
+> 使用场景:
+
+在某些场景中，不光要对方法的返回值和调用进行验证，同时需要验证一系列交互后所传入方法的参数。那么我们可以用参数捕获器来捕获传入方法的参数进行验证，看它是否符合我们的要求。
+    
 ```
-@InjectMocks
-private IndividualEntityRepository injectIndividualEntityRepository;
-@Mock
-private IndividualPoRepository mockIndividualPoRepository;
-@Mock
-private AddressPoRepository mockAddressPoRepository;
-@Mock
-private EmailPoRepository mockEmailPoRepository;
-@Mock
-private PhonePoRepository mockPhonePoRepository;
-@Mock
-private PartyAccountPoRepository mockPartyAccountPoRepository;
+//例1
+//当多次调用时，argument.getValue()返回最后一次调用的参数
+ArgumentCaptor<PhonePo> argument = ArgumentCaptor.forClass(PhonePo.class);
 
-@Mock 
-private IndividualEntity mockIndividualEntity;
+verify(mockedPhonePoRepository, times(2)).saveAndFlush(argument.capture());
+assertThat(argument.getValue().getPhoneNo()).isEqualTo("456");
 
-@Before
-public void initMock() {
-	MockitoAnnotations.initMocks(this);
-}
 
-@Test
-public void persistWhenIndividualPoNull() {
-	//Training
-	ArgumentCaptor<IndividualDataExtractor> argument = ArgumentCaptor.forClass(IndividualDataExtractor.class);
-	doAnswer((Answer) invocation -> {
-		IndividualDataExtractor extractor = invocation.getArgumentAt(0, IndividualDataExtractor.class);
-		extractor.setIndividualPo(null);
-		
-		return null;
-	}).when(mockIndividualEntity).providePersistentData(argument.capture());
-	//When
-	injectIndividualEntityRepository.persist(mockIndividualEntity);
-	//Then
-	IndividualDataExtractor extractor = argument.getValue();
-	verify(mockIndividualPoRepository,times(0)).save(any());
-	verify(mockAddressPoRepository,times(0)).save(any());
-	verify(mockEmailPoRepository,times(0)).save(any());
-	verify(mockPartyAccountPoRepository,times(0)).save(any());
-	verify(mockPhonePoRepository,times(0)).save(any());
-}
+//例2
+//当多次调用时使用argument.getAllValues()获取所有参数
+ArgumentCaptor<PhonePo> argument = ArgumentCaptor.forClass(PhonePo.class);
+
+verify(mockedPhonePoRepository, times(2)).saveAndFlush(argument.capture());
+List<PhonePo> argumentList = argument.getAllValues();
+assertThat(argumentList.get(0).getPhoneNo()).isEqualTo("123");
+assertThat(argumentList.get(1).getPhoneNo()).isEqualTo("456");
+
+verify(mockedPhonePoRepository, times(2)).saveAndFlush(any());
+
+```
+> 注意事项
+
+    1. 要先capture()在getValue();
+    2. 当多次调用时，argument.getValue()返回最后一次调用的参数
+
+
+### ArgumentCaptor + doAnswer + vertify使用实例
+
+```
 ```
