@@ -4,7 +4,7 @@ discriptions: "Collectors使用"
 date: 2018-11-15T06:06:28+08:00
 author: Pismery Liu
 archives: "2018"
-tags: [工具类]
+tags: [工具类,Java]
 categories: [Java]
 showtoc: true
 ---

@@ -1,14 +1,51 @@
 ---
-title: "Callable、Future、Excutor"
-discriptions: "Callable、Future、Excutor"
+title: "Callable、Thread、Runnable"
+discriptions: "Callable、Thread、Runnable"
 date: 2018-11-29T21:57:58+08:00
 author: Pismery Liu
 archives: "2018"
-tags: [concurrent]
+tags: [concurrent,Java]
 categories: [Java]
 showtoc: true
 ---
 <!--more-->
+
+# Thread vs Runnable
+
+> 示例代码
+
+```
+public class Demo extend Thread {
+    public Demo() {
+        super("Demo-Thread");
+    }
+    
+    public void run() {
+        //Code
+    }
+    
+    public static void main(String[] args) {
+        new Demo().start();
+    }
+}
+
+
+public class Demo implements Runnable {
+    public void run() {
+        //Code
+    }
+    
+    public static void main(String[] args) {
+        new Thread(new Demo()).start();
+    }
+}
+```
+
+> 比较
+
+1. 通过实现Runnable接口更好，在Java中只允许单继承，因此若继承了Thread则不能再继承其他类
+2. 在多线程中，继承Thread的方式内存使用量更多，每个线程都包含一个与它关联的唯一对象，而实现Runnable接口，内存使用会更少。因为，许多线程可以共享相同的可运行实例。
+
 
 # Callable、Future、Excutor
 

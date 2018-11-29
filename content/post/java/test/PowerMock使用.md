@@ -4,7 +4,7 @@ discriptions: "PowerMock使用"
 date: 2018-11-28T21:30:42+08:00
 author: Pismery Liu
 archives: "2018"
-tags: [测试]
+tags: [测试,Java]
 categories: [Java]
 showtoc: true
 ---
