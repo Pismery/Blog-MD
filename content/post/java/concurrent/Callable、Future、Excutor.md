@@ -14,7 +14,7 @@ showtoc: true
 
 > Callable
 
-Callable是一个接口，里面包含call方法，可以将线程的逻辑写在call方法里。相对于继承Thread和实现Runnable接口实现多继承，实现Callable接口的方式能够获取线程的返回值，并且可以通过Future来控制它的状态
+Callable是一个接口，里面包含call方法，可以将线程的逻辑写在call方法里。相对于继承Thread和实现Runnable接口实现多线程，实现Callable接口的方式能够获取线程的返回值，并且可以通过Future来控制它的状态
 
 ```
 @FunctionalInterface
