@@ -194,6 +194,7 @@ fixed能够正常使用，能够重新配置线程池。
 从源码上看，newSingleThreadExecutor仅仅是在newFixedThreadPool(1)上包装了FinalizableDelegatedExecutorService类，使其只暴露线程池的执行方法，隐藏了ThreadPoolExecutor配置线程池的方法。因此两者除了能否重新配置线程池以外没有其他区别。
 
 注意在网上说两者区别有
+
 - newSingleThreadExecutor能够保证任务的执行顺序，newFixedThreadPool(1)不能。
 - newSingleThreadExecutor在线程异常时会新建线程替换异常线程，newFixedThreadPool不能。
 
