@@ -248,7 +248,7 @@ public static ScheduledExecutorService newScheduledThreadPool(
 }
 ```
 
-newScheduledThreadPool底层使用ScheduledThreadPoolExecutor，而ScheduledThreadPoolExecutor仍是继承自ThreadPoolExecutor。使用的是DelayedWorkQueue作为阻塞队列
+newScheduledThreadPool底层使用ScheduledThreadPoolExecutor，而ScheduledThreadPoolExecutor仍是继承自ThreadPoolExecutor。使用DelayedWorkQueue作为阻塞队列
 
 > 特性
 
