@@ -1,8 +1,11 @@
 ---
-title =  "{{ replace .TranslationBaseName "-" " " | title }}"
-date = {{ .Date }}
-tags = []
-featured_image = ""
-description = ""
+title: "{{ replace .Name "-" " " | title }}"
+discriptions: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+author: Pismery Liu
+archives: "{{ dateFormat "2006" now }}"
+tags: []
+categories: []
+showtoc: true
 ---
-
+<!--more-->
