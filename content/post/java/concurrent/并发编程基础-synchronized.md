@@ -1,6 +1,6 @@
 ---
-title: "Synchronized"
-discriptions: "Synchronized"
+title: "并发编程基础-synchronized"
+discriptions: "并发编程基础-synchronized"
 date: 2018-12-20T21:46:37+08:00
 author: Pismery Liu
 archives: "2018"

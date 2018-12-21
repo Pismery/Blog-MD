@@ -1,6 +1,6 @@
 ---
-title: "Callable、Thread、Runnable"
-discriptions: "Callable、Thread、Runnable"
+title: "并发编程基础-Thread、Runnable、Callable"
+discriptions: "并发编程基础-Thread、Runnable、Callable"
 date: 2018-11-29T21:57:58+08:00
 author: Pismery Liu
 archives: "2018"

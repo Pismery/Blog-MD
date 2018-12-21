@@ -1,6 +1,6 @@
 ---
-title: "Exuctos线程池工厂"
-discriptions: "Exuctos线程池工厂"
+title: "并发编程之线程池-工厂类Executors"
+discriptions: "并发编程之线程池-工厂类Executors"
 date: 2018-12-05T21:16:38+08:00
 author: Pismery Liu
 archives: "2018"

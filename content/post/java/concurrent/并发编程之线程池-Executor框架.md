@@ -1,6 +1,6 @@
 ---
-title: "Executor框架"
-discriptions: "Executor框架"
+title: "并发编程之线程池-Executor框架"
+discriptions: "并发编程之线程池-Executor框架"
 date: 2018-12-09T08:50:27+08:00
 author: Pismery Liu
 archives: "2018"
