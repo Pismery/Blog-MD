@@ -1,6 +1,6 @@
 ---
 title: "并发编程之并发工具类-CountDownLatch"
-discriptions: "并发编程之并发工具类-CountDownLatch"
+discriptions: "并发编程之并发工具类-    CountDownLatch"
 date: 2018-12-21T21:04:54+08:00
 author: Pismery Liu
 archives: "2018"

@@ -90,6 +90,17 @@ isPlainText = true
 mediaType = "application/json"
 notAlternative = true
 
+[params.valine]
+enable = true
+appId = 'zfOn1B2YTxxPd1yjqecV2u9P-gzGzoHsz'
+appKey = 'vvDdQkMwgbffpkHklpHPTHkP'
+notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+verify = false # Verification code
+avatar = 'mm' 
+placeholder = '说点什么吧...'
+visitor = true
+
+
 [params.algolia]
 vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
 params = ["categories", "tags"] 
