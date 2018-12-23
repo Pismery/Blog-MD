@@ -96,7 +96,7 @@ appId = 'zfOn1B2YTxxPd1yjqecV2u9P-gzGzoHsz'
 appKey = 'vvDdQkMwgbffpkHklpHPTHkP'
 notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
 verify = false # Verification code
-avatar = 'mm' 
+avatar = 'identicon' 
 placeholder = '说点什么吧...'
 visitor = true
 
