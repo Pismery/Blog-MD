@@ -1,12 +1,15 @@
 ---
-title: About Hugo
-date: 2014-04-09
-authorbox: false
-sidebar: false
-categories:
-    - about
-menu: main
+title: ""
+discriptions: ""
+date: 2018-12-16T21:09:02+08:00
+author: Pismery Liu
+archives: "2018"
+tags: []
+categories: []
+showtoc: true
+draft: true
 ---
+<!--more-->
 
 Hugo is a static site engine written in Go.
 

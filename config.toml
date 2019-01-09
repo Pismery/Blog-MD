@@ -15,7 +15,8 @@ hasCJKLanguage = true
 home = ["HTML", "RSS", "Algolia"]
 
 [params]
-  header_image = "img/home-bg2.jpg"
+  header_image = "img/home-bg.jpg"
+  about_me = true
   SEOTitle = "博客 | Pismery Liu Blog"
   description = "程序员"
   keyword = "Pismery Johonr 博客"
@@ -23,6 +24,7 @@ home = ["HTML", "RSS", "Algolia"]
 
   image_404 = "img/404-bg.jpg"
   title_404 = "你来到了没有知识的荒原 :("
+  
 
   # leancloud storage for page view counter
   page_view_conter = false
