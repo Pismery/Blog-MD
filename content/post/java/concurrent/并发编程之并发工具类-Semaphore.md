@@ -8,26 +8,29 @@ tags: [concurrent,Java]
 categories: [Java]
 showtoc: true
 ---
+
+同步工具类 Semaphore 实现信号量的功能，具有公平锁和非公平锁两种方式。
+
 <!--more-->
 
 # Semaphore(信号量)
 
 > 前置概念
 
-公平锁：进入先检测等待队列是否有等待线程，若没有或者是第一个则获取锁，否则在队列中排队FIFO
+公平锁：进入先检测等待队列是否有等待线程，若没有或者是第一个则获取锁，否则在队列中排队 FIFO。
 
 非公平锁：进入直接获取锁，获取失败了才加入等待队列排队。
 
 > 基本介绍
 
-在Java中，synchronized和lock锁实现了多线程环境下，保证只有一个线程能够访问共享资源。但是，在另一类场景中，共享资源有多个副本能够同时使用，如打印文件具有多台打印机。面对这类场景，Java提供了资源的多副本的并发访问控制，Semaphore(信号量)就是其中的一种。
+在Java中，synchronized 和 lock 锁实现了多线程环境下，保证只有一个线程能够访问共享资源。但是，在另一类场景中，共享资源有多个副本能够同时使用，如打印文件具有多台打印机。面对这类场景，Java 提供了资源的多副本的并发访问控制，Semaphore(信号量) 就是其中的一种。
 
-Semaphore(信号量)原理：其内部维护了一个计数器，计数器的数值表示剩余的共享资源个数。一个线程若要访问共享资源则需要获取信号量，若计数器值大于等于1，则先将计数器的值减一，再访问共享资源。若计数器值为0，则线程进入休眠状态，直到计数器值不为零会唤醒线程去争夺计数器。
+Semaphore(信号量) 原理：其内部维护了一个计数器，计数器的数值表示剩余的共享资源个数。一个线程若要访问共享资源则需要获取信号量，若计数器值大于等于 1 ，则先将计数器的值减一，再访问共享资源。若计数器值为 0，则线程进入休眠状态，直到计数器值不为零会唤醒线程去争夺计数器。
 
 
 > 使用
 
-```
+```Java
 ## 声明
 
 //默认使用非公平锁
@@ -41,7 +44,7 @@ public Semaphore(int permits, boolean fair) {
 }
 ```
 
-```
+```Java
 ## 模板
 
 Semaphore semaphore = new Semaphore(10,true);
@@ -52,7 +55,7 @@ semaphore.release();
 
 以下模拟多台打印机作业的并发使用
 
-```
+```Java
 public static void main(String[] args) throws InterruptedException {
     PrinterQueue printerQueue = new PrinterQueue(3);
 
@@ -70,7 +73,7 @@ public static void main(String[] args) throws InterruptedException {
 }
 ```
 
-```
+```Java
 @Slf4j
 private static class PrintJob implements Runnable {
     private PrinterQueue printerQueue;
@@ -86,7 +89,7 @@ private static class PrintJob implements Runnable {
 }
 ```
 
-```
+```Java
 @Slf4j
 private static class PrinterQueue {
     private Semaphore semaphore;
@@ -182,8 +185,6 @@ Thread-4: The print job is done...
 5个线程Threod-0 -- Thread-4 竞争Printer1,Printer2,Printer3。
 所有三个线程抢到资源后，其中一个Done了，下一个线程才能抢到。
 ```
-
-
 
 
 > 参考链接

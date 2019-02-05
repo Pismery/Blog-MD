@@ -8,13 +8,16 @@ tags: [concurrent,Java]
 categories: [Java]
 showtoc: true
 ---
+
+同步工具类 CyclicBarrer 实现一组线程相互等待，直到所有线程到达屏障。
+
 <!--more-->
 
 # CyclicBarrier
 
-CyclicBarrier用来实现一组线程被阻塞在屏障前，直到最后一个线程到达屏障前，再打开屏障唤醒所有线程继续运行的场景。又因为Barrier被释放后能够继续重用，所以叫循环屏障或循环栅栏。
+CyclicBarrier 用来实现一组线程被阻塞在屏障前，直到最后一个线程到达屏障前，再打开屏障唤醒所有线程继续运行的场景。又因为 Barrier 被释放后能够继续重用，所以叫循环屏障或循环栅栏。
 
-> 构造CyclicBarrier
+> 构造 CyclicBarrier
 
 ```Java
 public CyclicBarrier(int parties, Runnable barrierAction) {
@@ -29,15 +32,15 @@ public CyclicBarrier(int parties) {
 }
 ```
 
-如上图源码,CyclicBarrier有两个构造函数。下面介绍参数意思：
+如上图源码，CyclicBarrier 有两个构造函数。下面介绍参数意思：
 
 - parties：表示阻塞的线程数。
-- barrierAction：当所有线程到达屏障时,先执行barrierAction，再打开屏障，主要用于实现更复杂的场景。
+- barrierAction：当所有线程到达屏障时，先执行 barrierAction，再打开屏障，主要用于实现更复杂的场景。
 
 
-> 源码分析api
+> 源码分析 api
 
-从下面的CyclicBarrier源码，发现CyclicBarrier是依赖ReentrantLock和Condition实现的。注意Generation是CyclicBarrier更新换代的标志，同一批次线程属于同一代，当正常打开屏障则会更新换代。broken表示是否屏障是否被破坏。
+从下面的 CyclicBarrier 源码，发现 CyclicBarrier 是依赖 ReentrantLock 和 Condition 实现的。注意 Generation 是 CyclicBarrier 更新换代的标志，同一批次线程属于同一代，当正常打开屏障则会更新换代。broken 表示是否屏障是否被破坏。
 
 ```Java
 public class CyclicBarrier {
@@ -60,7 +63,7 @@ public class CyclicBarrier {
 }
 ```
 
-CyclicBarrier最重要的方法就是await方法，下面分析await方法的源码实现
+CyclicBarrier 最重要的方法就是 await 方法，下面分析 await 方法的源码实现
 
 ```Java
 //方法作用: 打开屏障(即唤醒所有等待的线程)，重制count值，更新generation
@@ -162,12 +165,12 @@ private int dowait(boolean timed, long nanos)
 }
 ```
 
-从源码可以分析出await方法处理逻辑如下：
+从源码可以分析出 await 方法处理逻辑如下：
 
 1. 当最后一个线程未到达前，所有线程被阻塞；
-2. 若有线程被中断，则破坏屏障所有线程抛出BrokenBarrierException；
-3. 若有线程等待超时，则破坏屏障并唤醒其他线程后抛出TimeoutException，其他线程发现屏障被破坏后抛出BrokenBarrierException；
-4. 若主动调用此barrier的reset()方法，则破坏屏障所有线程抛出BrokenBarrierException；并更新Generation;
+2. 若有线程被中断，则破坏屏障所有线程抛出 BrokenBarrierException；
+3. 若有线程等待超时，则破坏屏障并唤醒其他线程后抛出 TimeoutException，其他线程发现屏障被破坏后抛出 BrokenBarrierException；
+4. 若主动调用此 barrier 的 reset() 方法，则破坏屏障所有线程抛出 BrokenBarrierException；并更新 Generation;
 5. 若上述情况未发生，最后一个线程到达，则唤醒所有线程继续运行。
 
 

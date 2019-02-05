@@ -8,17 +8,20 @@ tags: [concurrent,Java]
 categories: [Java]
 showtoc: true
 ---
+
+同步工具类 CountDownLatch 实现一个或多个线程阻塞等待其他他线程完成操作。
+
 <!--more-->
 
 # CountDownLatch
 
-> 什么是CountDownLatch
+> 什么是 CountDownLatch
 
-在Java5中concurrent包出现了一组解决多线程的工具类如CountDownLatch、CyclicBarrier、BlockingQueue。本文介绍的CountDownLatch是一种同步工具类，实现一个或多个线程阻塞等待直到其他线程完成一系列操作的功能。
+在 Java5 中 concurrent 包出现了一组解决多线程的工具类如 CountDownLatch、CyclicBarrier、BlockingQueue。本文介绍的CountDownLatch是一种同步工具类，实现一个或多个线程阻塞等待直到其他线程完成一系列操作的功能。
 
-> CountDownLatch如何工作
+> CountDownLatch 如何工作
 
-CountDownLatch只有一个构造函数
+CountDownLatch 只有一个构造函数
 
 ```Java
 public CountDownLatch(int count) {
@@ -27,11 +30,11 @@ public CountDownLatch(int count) {
 }
 ```
 
-count表示需要等待的线程数目，这个值只能被设置一次，构造出来后，不能够再重新设置这个计数值。
+count 表示需要等待的线程数目，这个值只能被设置一次，构造出来后，不能够再重新设置这个计数值。
 
-主线程在启动其他线程执行任务后，需要立刻调用CountDownLatch中await()方法，阻塞等待CountDownLatch中计数器的值为0；
+主线程在启动其他线程执行任务后，需要立刻调用 CountDownLatch 中 await() 方法，阻塞等待 CountDownLatch 中计数器的值为 0；
 
-每当一个线程执行完毕，调用CountDownLatch中的countDown方法将计数器的值减一，所以每个线程需要维护一个CountDownLatch的引用。当计数器值为0表示所有线程执行完毕，主线程再继续向下运行。
+每当一个线程执行完毕，调用 CountDownLatch 中的 countDown 方法将计数器的值减一，所以每个线程需要维护一个 CountDownLatch 的引用。当计数器值为0表示所有线程执行完毕，主线程再继续向下运行。
 
 
 > 应用场景
@@ -41,7 +44,7 @@ count表示需要等待的线程数目，这个值只能被设置一次，构造
 
 > 使用示例
 
-模拟了一个应用程序启动类，它开始时启动了n个线程类，这些线程将检查外部系统并完成后调用ocountDown方法，并且启动类一直在阻塞等待着。一旦验证和检查了所有外部服务，那么启动类恢复执行。
+模拟了一个应用程序启动类，它开始时启动了 n 个线程类，这些线程将检查外部系统并完成后调用 countDown 方法，并且启动类一直在阻塞等待着。一旦验证和检查了所有外部服务，那么启动类恢复执行。
 
 ```Java
 public class CountDownLatchDemo {
@@ -166,5 +169,5 @@ Application is up
 
 > 参考连接
 
-- [什么时候使用CountDownLatch](http://www.importnew.com/15731.html)
+- [什么时候使用 CountDownLatch ](http://www.importnew.com/15731.html)
 - [Java concurrency – CountDownLatch Example](https://howtodoinjava.com/java/multi-threading/when-to-use-countdownlatch-java-concurrency-example-tutorial/)

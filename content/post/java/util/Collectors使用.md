@@ -8,6 +8,9 @@ tags: [工具类,Java]
 categories: [Java]
 showtoc: true
 ---
+
+介绍 Collectors 工具类
+
 <!--more-->
 
 # Collectors
@@ -15,6 +18,7 @@ showtoc: true
 ## 简介
 
 Collectors是一个将流转化成一个值的规约操作，这个值可以是Collection，Set，value Object。通过Collectors可以实现一下功能：
+
 1. Reducing stream to a single value
 2. Group elements in a stream   
 3. Partition elements in a stream
@@ -23,7 +27,7 @@ Collectors是一个将流转化成一个值的规约操作，这个值可以是C
 
 > 操作类
 
-```
+```Java
 @Getter
 @Setter
 @AllArgsConstructor
@@ -46,9 +50,9 @@ public enum TaskType {
 
 ### toList, toSet, toCollection
 
-将流收集为List,Set集合若想是自定义集合则使用toCollection，集合必须继承于Collection。因此toCollection不能收集转化为Map
+将流收集为 List, Set 集合若想是自定义集合则使用 toCollection，集合必须继承于Collection。因此 toCollection 不能收集转化为 Map。
 
-```
+```Java
 public static List<Task> collectToList(List<Task> list) {
     return list.stream().collect(Collectors.toList());
 }
@@ -64,15 +68,15 @@ public static LinkedHashSet collectToLinkedHashSet(List<Task> list) {
 
 ### toMap
 
-toMap方法有三个重载函数：
-参数有四个：
+toMap 方法有三个重载函数，参数如下：
+
 1. keyMapper：a mapping function to produce keys
 2. valueMapper：a mapping function to produce values
-3. mergeFunction：a merge function, used to resolve collisions between alues associated with the same key (若不定义默认有重复key值会抛IllegalStateException)
+3. mergeFunction：a merge function, used to resolve collisions between alues associated with the same key (若不定义默认有重复 key 值会抛 IllegalStateException)
 4. mapSupplier：a function which returns a new, empty Map into which the results will be inserted
 
 
-```
+```Java
 ## 方法声明
 public static <T, K, U> Collector<T, ?, Map<K,U>> toMap(
         Function<? super T, ? extends K> keyMapper,
@@ -99,7 +103,7 @@ public static <T, K, U, M extends Map<K, U>> Collector<T, ?, M> toMap(
 
 > 使用
 
-```
+```Java
 public static HashMap<String, Task> collectToMap(List<Task> list) {
     //return list.stream().collect(Collectors.toMap(Task::getTitle, task -> task));
     return list.stream().collect(Collectors.toMap(Task::getTitle, Function.identity(), (t1, t2) -> t2, HashMap::new));
@@ -116,11 +120,11 @@ public static LinkedHashMap<String, Task> collectToLinkedHashMap(List<Task> list
 
 ### groupingBy，partitioningBy
 
-groupingBy更加广泛点，partitioningBy返回的Map的key只能是Boolean。
+groupingBy 使用更加广泛点，partitioningBy 返回的 Map 的 key 只能是 Boolean。
 
 > 函数声明
 
-```
+```Java
 public static <T, K> Collector<T, ?, Map<K, List<T>>> groupingBy(Function<? super T, ? extends K> classifier) {
     return groupingBy(classifier, toList());
 }
@@ -140,7 +144,7 @@ public static <T, D, A> Collector<T, ?, Map<Boolean, D>> partitioningBy(
 
 > 示例
 
-```
+```Java
 public static Map<TaskType, List<Task>> groupByTaskType(List<Task> list) {
     return list.stream().collect(Collectors.groupingBy(task -> task.getType()));
 }
@@ -158,7 +162,7 @@ public static Map<Boolean, List<Task>> partitionByTaskType(List<Task> list) {
 
 > 函数声明 
 
-```
+```Java
 public static Collector<CharSequence, ?, String> joining(
         CharSequence delimiter,
          CharSequence prefix,
@@ -183,7 +187,7 @@ public static Collector<CharSequence, ?, String> joining() {
 
 > 示例
 
-```
+```Java
 public static String joinTite(List<Task> taskList) {
     return taskList.stream()
             .map(Task::getTitle)
@@ -214,7 +218,7 @@ public static String joinTite(List<Task> taskList) {
 
 ```
 
-### averaging,counting,summing
+### averaging, counting, summing
 
 用于基本类型计算统计
 

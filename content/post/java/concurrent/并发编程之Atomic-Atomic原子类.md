@@ -1,6 +1,6 @@
 ---
-title: "并发编程之Atomic Atomic原子类"
-discriptions: "并发编程之Atomic Atomic原子类"
+title: "并发编程之 Atomic 原子类"
+discriptions: "并发编程之 Atomic 原子类"
 date: 2019-01-26T20:28:19+08:00
 author: Pismery Liu
 archives: "2019"
@@ -9,9 +9,11 @@ categories: [Java]
 showtoc: true
 ---
 
+J.U.C Atomic 类通过 CAS 实现原子性操作。
+
 <!--more-->
 
-# Atomic原子类
+# Atomic 原子类
 
 Atomic 原子类能够保证在多线程下的原子性。其内部是通过 CAS 机制实现的原子性操作。Atomic 原子类可以分为以下几类：
 

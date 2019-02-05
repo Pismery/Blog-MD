@@ -4,7 +4,7 @@ discriptions: "JVM之垃圾回收机制"
 date: 2019-01-18T22:22:39+08:00
 author: Pismery Liu
 archives: "2019"
-tags: [Java，JVM]
+tags: [Java,JVM]
 categories: [Java]
 showtoc: true
 ---
