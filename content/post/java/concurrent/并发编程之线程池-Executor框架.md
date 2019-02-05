@@ -9,11 +9,11 @@ categories: [Java]
 showtoc: true
 ---
 
-Executors 框架线程池创建的工厂类。
+Executor 框架线程池框架。
 
 <!--more-->
 
-# Executors 框架
+# Executor 框架
 
 > 类图
 
