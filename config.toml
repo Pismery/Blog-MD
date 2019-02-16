@@ -42,6 +42,7 @@ home = ["HTML", "RSS", "Algolia"]
   sidebar_avatar = "img/head.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
   featured_tags = true 
+  
   featured_condition_size = 0
 
   # Baidu Analytics
@@ -86,6 +87,10 @@ home = ["HTML", "RSS", "Algolia"]
   #title =  "Image Compression"
   #href = "https://tinypng.com"
   
+  [[params.addtional_menus]]
+  title =  "ABOUT1123"
+  href =  "/top/about/"
+
 [outputFormats.Algolia]
 baseName = "algolia"
 isPlainText = true
