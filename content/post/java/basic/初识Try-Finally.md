@@ -66,19 +66,18 @@ The finally block always executes when the try block exits. This ensures that th
 
 通过翻看[官方的jvm规范](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html#jvms-4.10.2.5)，就能够知道其真正的执行流程：
 
-```html
-If the try clause executes a return, the compiled code does the following:
+> If the try clause executes a return, the compiled code does the following:
 
-1. Saves the return value (if any) in a local variable.
-2. Executes a jsr to the code for the finally clause.
-3. Upon return from the finally clause, returns the value saved in the local variable.
+> 1. Saves the return value (if any) in a local variable.
+> 2. Executes a jsr to the code for the finally clause.
+> 3. Upon return from the finally clause, returns the value saved in the local variable.
 
-If an exception is thrown in the try clause, this exception handler does the following:
+> If an exception is thrown in the try clause, this exception handler does the following:
 
-1. Saves the exception in a local variable.
-2. Executes a jsr to the finally clause.
-3. Upon return from the finally clause, rethrows the 
-```
+> 1. Saves the exception in a local variable.
+> 2. Executes a jsr to the finally clause.
+> 3. Upon return from the finally clause, rethrows the 
+
 
 简单来说：
 
