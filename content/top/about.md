@@ -11,9 +11,6 @@
 - 工作年限：1年
 - 技术博客：[https://pismery.github.io/](https://pismery.github.io/)
 - 码云：[https://gitee.com/pismery](https://gitee.com/pismery)
-- 期望职位：Java 开发工程师
-- 期望薪资：税前月薪11k~15k，特别情况可例外
-- 期望城市：深圳、广州
 
 # 工作经历
 
