@@ -89,7 +89,7 @@ home = ["HTML", "RSS", "Algolia"]
   #href = "https://tinypng.com"
   
   [[params.addtional_menus]]
-  title =  "ABOUT"
+  title =  "ABOUT1"
   href =  "/top/about/"
 
 [outputFormats.Algolia]
