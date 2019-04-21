@@ -71,10 +71,9 @@ home = ["HTML", "RSS", "Algolia"]
   wechat         = "img/wechat_code.png" 
   #pinterest     = "full profile url in pinterest"
   
-  [[params.friend_link]]
+  #[[params.friend_link]]
   #title = "Linda的博客"
   #href =  "https://zhaozhihan.com"
-
   #[[params.bookmark_link]]
   #title =  "Martin Fowler"
   #href =  "https://martinfowler.com"
@@ -92,10 +91,8 @@ home = ["HTML", "RSS", "Algolia"]
   title =  "ABOUT"
   href =  "/top/about/"
   [[params.addtional_menus]]
-  title =  "TAGS"
+  title =  "TAG"
   href =  "/tags"
-
-
 
 [outputFormats.Algolia]
 baseName = "algolia"
