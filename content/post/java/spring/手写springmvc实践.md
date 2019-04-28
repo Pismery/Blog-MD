@@ -4,12 +4,12 @@ discriptions: "手写springmvc实践"
 date: 2019-04-28T11:23:34+08:00
 author: Pismery Liu
 archives: "2019"
-tags: []
-categories: []
+tags: [Java,Spring]
+categories: [Java]
 showtoc: true
 ---
 
-<!--more-->
+<!--more--> 
 # Spring MVC
 
 Spring MVC 中核心关键类是 DispatchServlet, 所有的请求都会通过这个类进行分派调用指定的业务逻辑代码；这个类中最重要的两个入口方法是 initStrategies() 和 doDispatch()
