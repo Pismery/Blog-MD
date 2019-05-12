@@ -26,7 +26,7 @@ JXLS 是 Java 导出 Excel 的一个工具包，尽管 POI 工具包已经可以
 
 ## 指令介绍
 
-JXLS 中还有许多指令，下面介绍一些常用的指令；
+JXLS 中其采用了 [Apache JEXL](http://commons.apache.org/proper/commons-jexl/reference/syntax.html) 指令表达式，下面介绍一些常用的指令；
 
 ### jx:each 循环
 
