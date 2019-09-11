@@ -172,7 +172,7 @@ public class ParameterNameUtil {
         try {
             ClassReader classReader = new ClassReader(is);
             classReader.accept(new ClassVisitor(Opcodes.ASM5) {
-                //当访问方法时，调用有以下重写方法
+                //当访问方法时，调用以下重写方法
                 @Override
                 public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
                     // 只处理指定的方法 method
