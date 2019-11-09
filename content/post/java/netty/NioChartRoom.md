@@ -244,3 +244,11 @@ public class NioChatClient {
     }
 }
 ```
+
+> 运行结果
+
+![](https://raw.githubusercontent.com/Pismery/Picture/master/img20191109214530.png)
+
+![](https://raw.githubusercontent.com/Pismery/Picture/master/img20191109214559.png)
+
+![](https://raw.githubusercontent.com/Pismery/Picture/master/img20191109214624.png)
