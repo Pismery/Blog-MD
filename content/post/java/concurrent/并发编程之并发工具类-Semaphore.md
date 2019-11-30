@@ -74,7 +74,6 @@ public static void main(String[] args) throws InterruptedException {
 ```
 
 ```Java
-@Slf4j
 private static class PrintJob implements Runnable {
     private PrinterQueue printerQueue;
 

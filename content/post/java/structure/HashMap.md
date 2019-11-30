@@ -26,7 +26,7 @@ showtoc: true
 
 ![](https://raw.githubusercontent.com/Pismery/Picture/master/img20191007202642.png)
 
-数据 + 链表的数据结构代码化，大概如下
+数组 + 链表的数据结构代码化，大概如下
 
 ```Java
 Class Structure {
@@ -65,7 +65,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 1. 计算 Key 的 Hash 值，根据 Hash 值计算下标；
 2. 如果没有发生哈希碰撞，则直接放入数组中；
 3. 如果发生了碰撞，则链接到碰撞节点下的链表或树中；
-4. 如果链接到链表后，超过了树化阈值 (TREEIFY_THRESHOLD = 8) 则将链表转化成红黑数；
+4. 如果链接到链表后，超过了树化阈值 (TREEIFY_THRESHOLD = 8) 则将链表转化成红黑树；
 5. 如果节点已经存在即 Key 已存在，则替换原来的 value;
 6. 如果加入节点后，数据容量超过了阈值（容量 * 加载因子）, 则进行扩容操作；
 

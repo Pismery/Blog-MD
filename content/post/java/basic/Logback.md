@@ -143,6 +143,7 @@ RollingFileAppender 滚动记录文件，先将日志记录到指定文件，当
         <pattern>%msg%n</pattern>
     </encoder>
 </appender>
+
 <!-- FixedWindowRollingPolicy-->
 <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>test.log</file>
@@ -195,7 +196,8 @@ encoder 可配置标签
     <file>foo.log</file>
     <encoder><!--默认就是PatternLayoutEncoder类-->
         <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        <!-- this quadruples logging throughput --> <immediateFlush>false</immediateFlush> <outputPatternAsHeader>true</outputPatternAsHeader>
+        <!-- this quadruples logging throughput --> 
+        <immediateFlush>false</immediateFlush> <outputPatternAsHeader>true</outputPatternAsHeader>
     </encoder> 
 </appender>
 ```

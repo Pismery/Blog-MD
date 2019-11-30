@@ -17,7 +17,7 @@ showtoc: true
 
 > 示例程序
 
-```
+```Java
 public class TryFinallyDemo {
     public int field = 0;
 

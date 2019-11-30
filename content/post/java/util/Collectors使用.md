@@ -224,7 +224,7 @@ public static String joinTite(List<Task> taskList) {
 
 > 使用示例
 
-```
+```Java
 public static void collectToValue(List<Task> list) {
     Double average = list.stream().collect(Collectors.averagingInt(Task::getValue));
     log.debug("task list average: " + average);
